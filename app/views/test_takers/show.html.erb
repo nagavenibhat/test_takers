@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login:</strong>
+  <%= @test_taker.login %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @test_taker.password %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @test_taker.title %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @test_taker.lastname %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @test_taker.firstname %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @test_taker.gender %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @test_taker.email %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @test_taker.picture %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @test_taker.address %>
+</p>
+
+<%= link_to 'Edit', edit_test_taker_path(@test_taker) %> |
+<%= link_to 'Back', test_takers_path %>

@@ -1,0 +1,59 @@
+<div class="container">
+
+  <h1> Welcome to Test Takers list</h1>
+  <p id="notice"><%= notice %></p>
+  <div class="row right-align">
+    <%= form_tag  bulk_insert_test_takers_path, multipart: true do %>
+        <%= file_field_tag :file ,required: true, class: ' col m3'%>
+        <%= submit_tag "Import Users", class: 'btn blue col m2' %>
+    <% end %>
+  </div>
+
+
+  <table class="striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Login</th>
+      <!--<th>Password</th>-->
+      <th>Title</th>
+      <th>Lastname</th>
+      <th>Firstname</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <!--<th>Picture</th>-->
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @test_takers.each do |test_taker| %>
+        <tr>
+          <td><%= test_taker.id %></td>
+          <td>
+            <%= image_tag(test_taker.picture) %>
+            <%= test_taker.login %></td>
+          <!--<td><%= test_taker.password %></td>-->
+          <td><%= test_taker.title %></td>
+          <td><%= test_taker.lastname %></td>
+          <td><%= test_taker.firstname %></td>
+          <td><%= test_taker.gender %></td>
+          <td><%= test_taker.email %></td>
+          <!--<td><%= test_taker.picture %></td>-->
+          <td><%= test_taker.address %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+
+  <div class="right-align">
+     <%= paginate @test_takers %>
+  </div>
+</div>
+
+
+
+<!--<%= link_to 'New Test Taker', new_test_taker_path, class: 'btn' %>-->
+
